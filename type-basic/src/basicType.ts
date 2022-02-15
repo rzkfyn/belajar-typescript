@@ -20,3 +20,12 @@ age akan dinisialisasi sebagai number (integer) oleh ts dan akan
 menimbulkan inline error jika age diisi oleh tipe data selain number
 */
 age = 17; // Aman
+
+/* Boolean (true || false) */
+let isMarried: boolean;
+// isMarried = "true" || 1; //error
+/* 
+isMaried akan dinisialisasi sebagai boolean oleh ts yang artinya hanya bisa diisi true atau false 
+dan akan menimbulkan inline error jika isMaried diisi oleh tipe data selain number
+*/
+isMarried = false;
