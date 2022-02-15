@@ -29,3 +29,14 @@ isMaried akan dinisialisasi sebagai boolean oleh ts yang artinya hanya bisa diis
 dan akan menimbulkan inline error jika isMaried diisi oleh tipe data selain number
 */
 isMarried = false;
+
+/* Any */
+let bebas: any;
+bebas = 'bebas';
+bebas = true;
+bebas = 10;
+bebas = [] || {} || true;
+/*
+Terlihat dari namanya, menggunakan tipe ini artinya kita bebas
+mengsisi variable dengan apapaun mau itu string, number, boolean, array maupun object
+*/
