@@ -13,3 +13,10 @@ arrnum = [1,2,3];
 let arrbool: boolean[];
 // arrbool = ["true", false, ["Hello", "World"]]; // error
 arrbool = [true, false, 3 < 5];
+
+// Array tuple
+/* Array yang elemennya sudak kita tentukan jumlah elemen dan tipenya harus seperti apa */
+let arrtuple: [string, number];
+arrtuple = ['Sofyan', 17];
+// arrtuple = ['Sofyan', true]; // error
+// arrtuple = ['Sofyan', 17, 'Wibu']; //Juga error
