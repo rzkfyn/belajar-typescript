@@ -29,3 +29,20 @@ function printNama(): void{
 }
 
 printNama();
+
+// Argument types pada function
+// Kita bisa menentukan tipe data apa yang akan digunakan pada sebuah function
+
+/* contoh */
+function multiply(val1: number, val2: number): number{
+    return val1 * val2;
+}
+
+console.log(multiply(10, 2));
+// console.log(multiply(10, 'wagy wangy')); // Error
+
+function printData(name: string, age: number): string{
+    return `Name : ${name}\nAge : ${age}`;
+}
+console.log(printData('Rizki Sofyan', 17));
+// console.log(printData('Rizki Sofyan', '17')); // Error
