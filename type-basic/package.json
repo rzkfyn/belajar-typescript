@@ -1,11 +1,11 @@
 {
-  "name": "string",
+  "name": "type-basic",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/src/enum.js",
   "scripts": {
     "dev": "rm -rf ./build && tsc --watch",
-    "start": "nodemon ./build/src/string.js",
+    "start": "nodemon ./build/src/enum.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
