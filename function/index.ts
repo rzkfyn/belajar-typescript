@@ -46,3 +46,13 @@ function printData(name: string, age: number): string{
 }
 console.log(printData('Rizki Sofyan', 17));
 // console.log(printData('Rizki Sofyan', '17')); // Error
+
+// Function as data type
+
+// Membuat tipe baru
+type Tambah = (val1: number, val2: number) => number;
+
+// tambah sudah ditentukan bertipe Tambah dimana argument dan return value dari fungsi ini harus sesuai dengan tipenya
+const tambah: Tambah = (a: number, b: number) => {
+    return a + b;
+}
