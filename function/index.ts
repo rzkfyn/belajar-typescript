@@ -56,3 +56,16 @@ type Tambah = (val1: number, val2: number) => number;
 const tambah: Tambah = (a: number, b: number) => {
     return a + b;
 }
+
+/* Default Parameter (Argument) */
+
+const printName = (firstname: string, lastname: string = 'Sofyan'): string => {
+    return `${firstname} ${lastname}`;
+}
+console.log(printName('Rizki'));
+/*
+Sama seperti js pada ts juga kita bisa menuliskan default parameter pada sebuah function
+dimana jika saat function tersebut dipanggil, jika parameter tidak diisi maka default
+parameter yang akan digunakan
+*/
+console.log(printName('Rizki', 'Sopain'));
