@@ -40,3 +40,14 @@ bebas = [] || {} || true;
 Terlihat dari namanya, menggunakan tipe ini artinya kita bebas
 mengsisi variable dengan apapaun mau itu string, number, boolean, array maupun object
 */
+
+/* Union Type */
+let phoneNumber: string | number;
+phoneNumber = '08123456789';
+phoneNumber = 089123456789;
+/*
+Kita dapat memnentukan tipe dari sebuah variable lebih dari satu tipe dengan union type
+seperti contoh di atas. Setiap tipe dipisahkan dengan tanda | dan jika kita mengisi variable
+dengan tipe yang tidak sesuai dengan yang kita tulis pada union type maka jelas akan terjadi
+error
+*/
