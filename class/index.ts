@@ -39,6 +39,48 @@ public : Bisa diakses dimanapun bahkan diluar class
 protected : Hanya bisa diakses oleh class tersebut dan class turunannya
 private : Hanya bisa di akses didalam class tersebut
 */
+// class User{
+//     private name: string;
+//     private age: number;
+
+//     public constructor(name: string, age: number){
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     public setName(name: string): void{
+//         this.name = name;
+//     }
+
+//     public getName(): string{
+//         return this.name;
+//     }
+// }
+
+// /* untuk melakukan pewarisan, menggunakan keyword extends dilanjutkan dengan nama parent class nya */
+// class Admin extends User{
+//     public read: boolean = true;
+//     public write: boolean = true;
+
+//     public getRole(): {read: boolean, write: boolean}{
+//         return {
+//             read: this.read,
+//             write: this.write
+//         };
+//     }
+// }
+
+// /* 
+// Meski class Admin tidak memiliki constructor, tapi class Parentnya memiliki constructor 
+// oleh karena itu tetap harus menyertakan argumen yang diperlukan constructor karena class Admin
+// mewarisi constructor method dari class User
+// */
+// const admin = new Admin('Sofyan', 17);
+// console.log(admin.getRole());
+
+// /* Karena Admin turunan dari User, Admin bisa  menggunakan method milik User */
+
+// Super Contructor
 class User{
     private name: string;
     private age: number;
@@ -57,10 +99,23 @@ class User{
     }
 }
 
-/* untuk melakukan pewarisan, menggunakan keyword extends dilanjutkan dengan nama parent class nya */
 class Admin extends User{
     public read: boolean = true;
     public write: boolean = true;
+    private phone: string;
+
+    /* 
+    Jika kita membuat constructor pada sebuah class turunan tapi pada class parentnya juga terdapat sebuah constructor method,
+    maka constructor pada class parentnya juga harus diisi menggunakan method super() untuk mengisi atribut yang diperlukan
+    contructor method class parentnya.
+    */
+
+    /* Atribut pada class parentnya juga dituliskan sebagai parameter */
+    public constructor(phone: string, name: string, age: number){
+        /* Dan diisi disini dengan method super() */
+        super(name, age);
+        this.phone = phone;
+    }
 
     public getRole(): {read: boolean, write: boolean}{
         return {
@@ -70,13 +125,6 @@ class Admin extends User{
     }
 }
 
-/* 
-Meski class Admin tidak memiliki constructor, tapi class Parentnya memiliki constructor 
-oleh karena itu tetap harus menyertakan argumen yang diperlukan constructor karena class Admin
-mewarisi constructor method dari class User
-*/
-const admin = new Admin('Sofyan', 17);
+/* Karena pada admin terdapat atribut baru maka kita juga harus mengirim argumen yang dijadikan parameternya */
+const admin = new Admin('0812345678910', 'Sofyan', 17);
 console.log(admin.getRole());
-
-/* Karena Admin turunan dari User, Admin bisa  menggunakan method milik User */
-console.log(admin.getName());
