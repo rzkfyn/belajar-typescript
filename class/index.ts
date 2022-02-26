@@ -5,7 +5,7 @@ bedanya, pada ts kita bisa menggunakan access modifier seperti public, protected
 yang mana akan berprilaku seperti bahasa oop lainnya
 */
 
-// Membuat class baru dengan menggunakan contructor
+// Membuat class baru dengan menggunakan constructor
 // class User {
 //     public name: string;
 //     public age: number;
@@ -135,6 +135,85 @@ Setter merupakan sebuah fungsi yang biasanya digunakan untuk mengatur atau menen
 tanpa mengakses atribut tersebut secara langsung. Dan getter merupakan sebuah fungsi untuk mengambil atau membaca atribut 
 dari class secara tidak mengakses atribut tersebut secara langsung.
 */
+// class User{
+//     private name: string;
+//     private age: number;
+//     private _email: string;
+
+//     public constructor(name: string, age: number, email: string){
+//         this.name = name;
+//         this.age = age;
+//         this._email = email;
+//     }
+
+//     // setter dan getter pada bahasa lain
+//     public setName(name: string){
+//         this.name= name;
+//     }
+
+//     public getName(): string{
+//         return this.name;
+//     }
+//     // setter dan getter pada bahasa lain
+//     /*
+//     Umumnya begitulah setter dan getter pada bahasa pemrogaraman oop lain seperti java dan php
+//     tapi, pada ts juga js, fungsi setter dan getter diawali dengan keyword set atau get.
+//     contoh: 
+//     */
+
+//     public set email(value: string){
+//         const characters = value.split('');
+//         let a = 0;
+//         characters.forEach(char => {
+//             if(char == '@') a += 1;
+//             if(char == ' ') throw new Error('Email tidak boleh menggukanan spasi!');
+//         });
+//         if(a < 1) throw new Error('Email tidak valid!');
+//         this._email = value;
+//     }
+
+//     public get email(): string{
+//         return this._email;
+//     }
+// }
+
+
+// class Admin extends User{
+
+//     public read: boolean = true;
+//     public write: boolean = true;
+//     private phone: string;
+
+//     public constructor(phone: string, name: string, age: number, email: string){
+//         super(name, age, email);
+//         this.phone = phone;
+//     }
+
+//     public getRole(): {read: boolean, write: boolean}{
+//         return {
+//             read: this.read,
+//             write: this.write
+//         };
+//     }
+// }
+
+// const admin = new Admin('0812345678910', 'Sofyan', 17, 'rzkfyn@gmail.com');
+// /*
+// fungsi setter dan getter pada js dan ts cukup unik karena saat memanggil fungsi tersebut tidak
+// perlu menggunakan kurung '()' jadi kesannya seperti mengakses atribut secara langsung padahal
+// sebernarnya kita memanggil sebuah fungsi dan menurut saia ini terasa cukup aneh wkwk
+// */
+// // menggunakan fungsi setter
+// admin.email = 'rzkfyn@gmail.com'
+
+// // memanggil fungsi getter
+// console.log(admin.email);
+
+// static proerty dan method
+/*
+Static property dan method merupakan property dan method yang dapat di akses tanpa membuat ojbjek
+baru dari sebuah kelas.
+*/
 class User{
     private name: string;
     private age: number;
@@ -146,20 +225,13 @@ class User{
         this._email = email;
     }
 
-    // setter dan getter pada bahasa lain
     public setName(name: string){
-        this.name= name;
+        this.name = name;
     }
 
     public getName(): string{
         return this.name;
     }
-    // setter dan getter pada bahasa lain
-    /*
-    Umumnya begitulah setter dan getter pada bahasa pemrogaraman oop lain seperti java dan php
-    tapi, pada ts juga js, fungsi setter dan getter diawali dengan keyword set atau get.
-    contoh: 
-    */
 
     public set email(value: string){
         const characters = value.split('');
@@ -183,6 +255,8 @@ class Admin extends User{
     public read: boolean = true;
     public write: boolean = true;
     private phone: string;
+    /* Static property dan method dibuat dengan mengggunakan keyword static */
+    private static roleName: string = 'Admin';
 
     public constructor(phone: string, name: string, age: number, email: string){
         super(name, age, email);
@@ -195,16 +269,13 @@ class Admin extends User{
             write: this.write
         };
     }
+
+    public static getRoleName(){
+        return this.roleName;
+    }
 }
 
-const admin = new Admin('0812345678910', 'Sofyan', 17, 'rzkfyn@gmail.com');
 /*
-fungsi setter dan getter pada js dan ts cukup unik karena saat memanggil fungsi tersebut tidak
-perlu menggunakan kurung '()' jadi kesannya seperti mengakses atribut secara langsung padahal
-sebernarnya kita memanggil sebuah fungsi dan menurut saia ini terasa cukup aneh wkwk
+Karena memanggil ke static method, jadi tidak perlu untuk menginisialisasi objek baru
 */
-// menggunakan fungsi setter
-admin.email = 'rzkfyn@gmail.com'
-
-// memanggil fungsi getter
-console.log(admin.email);
+console.log(Admin.getRoleName());
