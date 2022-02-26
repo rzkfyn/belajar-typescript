@@ -69,3 +69,17 @@ dimana jika saat function tersebut dipanggil, jika parameter tidak diisi maka de
 parameter yang akan digunakan
 */
 console.log(printName('Rizki', 'Sopain'));
+
+// Optional parameter
+/*
+Berbeda dengan default parameter yang telah kita tentukan isinya, pada optional parameter,
+jika parameter tidak diisi maka secara default akan diisi undefined
+*/
+//optional parameter dibuat dengan menambahkan tanda tanya
+function tambahin(val1: number, val2?: number):number{
+    if(val2) return val1 + val2;
+    return val1 + 0;
+}
+
+console.log(tambahin(1,2));
+console.log(tambahin(1));
