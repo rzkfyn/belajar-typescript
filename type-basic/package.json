@@ -5,7 +5,7 @@
   "main": "build/src/enum.js",
   "scripts": {
     "dev": "rm -rf ./build && tsc --watch",
-    "start": "nodemon ./build/src/enum.js",
+    "start": "nodemon ./build/src/generic.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
