@@ -31,7 +31,7 @@ class FynMap<T>{
     };
 
     public set(key: number, value: T): void{
-        if(this.exist(value)) return;
+        if(this.exists(value)) return;
         const item = [key, value];
         this.data.push(item);
     };
@@ -89,7 +89,7 @@ class FynMap<T>{
         return undefined;
     }
     
-    private exist(value: T): boolean{
+    private exists(value: T): boolean{
         for(const item of this.data){
             if(item[1] == value) return true;
         }
