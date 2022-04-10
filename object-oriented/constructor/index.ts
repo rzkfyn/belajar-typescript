@@ -1,4 +1,4 @@
-import Hewan from "./src/Hewan";
+import { Hewan } from "./src/Hewan";
 
 const kucing = new Hewan();
 // Tidak 'console.log' apapun tapi karena pada class hewan terdapat 
