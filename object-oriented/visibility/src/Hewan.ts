@@ -1,6 +1,6 @@
 /* Visibility */
 // Digunakan untuk membatasi atau mengatur hak akses dari setiap property dan method yang ada di dalam class
-// Terdapat tiga (empat sih kalo ts) jenis visibility yaitu public, protected dan private
+// Terdapat tiga jenis visibility yaitu public, protected dan private
 export class Hewan {
     /* Private */
     // Hanya bisa di akses pada class ini saja
